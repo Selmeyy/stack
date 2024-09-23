@@ -1,4 +1,4 @@
-name: Build
+nam selmeyy 
 
 on:
   push:
@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3
-      - name: Set Up JDK 17
+      - uses: actions/checkou
+      - name: Set Up JDK
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
@@ -44,12 +44,12 @@ jobs:
           distribution: 'zulu'
           java-version: 17
       - name: Run Unit Tests
-        run: ./gradlew testDebugUnitTest testBaseDebugUnitTest
+        run: ./gradlew testDebugUnitTest test
       - name: Copy Test Results
         if: always()
         run: |
           mkdir -p junit
-          find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} junit/ \;
+          find . -type f -regex ".*/build/te
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v3
